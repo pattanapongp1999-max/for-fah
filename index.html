@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สำหรับคุณ</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: #d6336c;
+    margin-bottom: 10px;
+  }
+
+  .message {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff4d6d;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background-color: #d6336c;
+  }
+
+  /* ตกแต่งคริสต์มาสเล็ก ๆ */
+  .snowflake {
+    position: fixed;
+    top: -10px;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 9999;
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>ถึงที่รักของฉัน ❤️</h1>
+  <div id="messages">
+    <div class="message">ตั้งแต่วันที่เราเจอกัน…</div>
+    <div class="message">ทุกวันกับคุณมันพิเศษมาก</div>
+    <div class="message">ขอบคุณที่อยู่เคียงข้างฉันตลอด 8 เดือนนี้</div>
+    <div class="message">คุณทำให้ฉันยิ้มได้ทุกวัน</div>
+    <div class="message">ฉันรักคุณมากขึ้นทุกวัน 💕</div>
+    <div class="message">และหวังว่าเราจะมีความสุขด้วยกันในวันคริสต์มาสนี้ 🎄</div>
+  </div>
+  <button onclick="showNextMessage()">อ่านต่อ...</button>
+</div>
+
+<script>
+  // สร้างหิมะตกเล็ก ๆ
+  function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.className = 'snowflake';
+    snowflake.style.left = Math.random() * window.innerWidth + 'px';
+    snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    snowflake.innerHTML = '❄';
+    document.body.appendChild(snowflake);
+
+    setTimeout(() => {
+      snowflake.remove();
+    }, 5000);
+  }
+  setInterval(createSnowflake, 300);
+
+  // แสดงข้อความทีละบรรทัด
+  let index = 0;
+  const messages = document.querySelectorAll('.message');
+  function showNextMessage() {
+    if(index < messages.length) {
+      messages[index].style.opacity = 1;
+      index++;
+    }
+  }
+</script>
+</body>
+</html>

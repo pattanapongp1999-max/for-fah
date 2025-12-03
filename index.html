@@ -1,112 +1,190 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>บี๋คั้บบ</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Kanit', sans-serif;
-    background: linear-gradient(to bottom, #ffe6e6, #ffcccc);
-    color: #333;
-    text-align: center;
-    overflow-x: hidden;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Fah – My Love Letter</title>
 
-  .container {
-    padding: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
+    <!-- ฟอนต์ลายมือ -->
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Sriracha&display=swap" rel="stylesheet">
 
-  h1 {
-    font-size: 2rem;
-    color: #d6336c;
-    margin-bottom: 10px;
-  }
+    <style>
+        body {
+            margin: 0;
+            background: #fff8f1;
+            font-family: "Sriracha", cursive;
+        }
 
-  .message {
-    font-size: 1.2rem;
-    margin: 20px 0;
-    opacity: 0;
-    transition: opacity 1s;
-  }
+        .paper {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            background: #fffdf8;
+            border: 1px solid #f0e6d8;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+            border-radius: 14px;
+            margin-top: 40px;
+        }
 
-  button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #ff4d6d;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #c07a5a;
+        }
 
-  button:hover {
-    background-color: #d6336c;
-  }
+        .sub {
+            text-align: center;
+            font-size: 18px;
+            color: #a06a4a;
+            margin-bottom: 20px;
+        }
 
-  /* ตกแต่งคริสต์มาสเล็ก ๆ */
-  .snowflake {
-    position: fixed;
-    top: -10px;
-    font-size: 1.5rem;
-    color: white;
-    z-index: 9999;
-    user-select: none;
-    pointer-events: none;
-    animation: fall linear infinite;
-  }
+        /* ปุ่มหัวข้อ */
+        .accordion {
+            background: #fdf4e7;
+            border: 1px solid #e2d2c3;
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
 
-  @keyframes fall {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(100vh) rotate(360deg); }
-  }
-</style>
+        .accordion:hover {
+            background: #f9ebd9;
+        }
+
+        /* เนื้อหา */
+        .panel {
+            display: none;
+            padding: 15px 20px;
+            margin-top: -5px;
+            margin-bottom: 20px;
+            background: #fffaf4;
+            border-left: 3px solid #d8b89f;
+            border-radius: 0 0 12px 12px;
+            animation: fade 0.4s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .img-flex {
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .img-flex img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
-  <h1>EIEI</h1>
-  <div id="messages">
-    <div class="message">EIEI</div>
-    <div class="message">EIEI</div>
-    <div class="message">EIEI</div>
-    <div class="message">EIEI</div>
-    <div class="message">EIEI</div>
-    <div class="message">EIEI</div>
-  </div>
-  <button onclick="showNextMessage()">กดจิ</button>
-</div>
 
-<script>
-  // สร้างหิมะตกเล็ก ๆ
-  function createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.className = 'snowflake';
-    snowflake.style.left = Math.random() * window.innerWidth + 'px';
-    snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
-    snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
-    snowflake.innerHTML = '❄';
-    document.body.appendChild(snowflake);
+    <!-- เพลง (ต้องมีไฟล์ mp3 ของคุณเองแล้วอัปโหลดใน repo) -->
+    <audio id="bgm" autoplay loop>
+        <div style="display:none;">
+            <iframe width="0" height="0"
+                src="https://www.youtube.com/embed/ใส่รหัสวิดีโอที่นี่?autoplay=1&loop=1&playlist=ใส่รหัสวิดีโออีกครั้ง"
+                frameborder="0" allow="autoplay">
+            </iframe>
+        </div>
+    </audio>
 
-    setTimeout(() => {
-      snowflake.remove();
-    }, 5000);
-  }
-  setInterval(createSnowflake, 300);
+    <div class="paper">
+        <h1>ถึงฟ้า 💙</h1>
+        <div class="sub">จดหมายรักในเดือนที่ 8 และคริสต์มาสของเรา 🎄</div>
 
-  // แสดงข้อความทีละบรรทัด
-  let index = 0;
-  const messages = document.querySelectorAll('.message');
-  function showNextMessage() {
-    if(index < messages.length) {
-      messages[index].style.opacity = 1;
-      index++;
-    }
-  }
-</script>
+        <!-- ปุ่ม 1 -->
+        <div class="accordion">1. วันที่เราได้เริ่มคบกัน</div>
+        <div class="panel">
+            <p>
+                แค่คิดถึงวันนั้นก็ยังยิ้มได้อยู่เลย…
+                มันเป็นวันที่เรียบง่าย แต่มีบางอย่างในตัวเธอที่ทำให้ฉันรู้ว่า
+                “คนคนนี้แหละ ที่จะทำให้ทุกวันมีความหมายมากขึ้น”
+            </p>
+        </div>
+
+        <!-- ปุ่ม 2 -->
+        <div class="accordion">2. 8 เดือนที่ผ่านมากับเธอ</div>
+        <div class="panel">
+            <p>
+                8 เดือนที่เหมือนผ่านไปเร็วมาก แต่กลับเต็มไปด้วยความอบอุ่นที่สุดในชีวิตฉัน
+                เธอทำให้ฉันรู้สึกว่า ‘ความรักดี ๆ มันมีอยู่จริง’
+            </p>
+        </div>
+
+        <!-- ปุ่ม 3 -->
+        <div class="accordion">3. 5 เดือนที่เราใช้ชีวิตอยู่ด้วยกัน</div>
+        <div class="panel">
+            <p>
+                การตื่นมาเห็นหน้าเธอทุกวัน
+                การได้กินข้าวด้วยกัน
+                การบ่น การขี้เกียจ การหัวเราะ
+                มันคือ “บ้าน” ของฉันจริง ๆ
+            </p>
+        </div>
+
+        <!-- ปุ่ม 4 -->
+        <div class="accordion">4. สิ่งที่ฉันอยากบอกเธอที่สุด</div>
+        <div class="panel">
+            <p>
+                ขอบคุณที่เข้ามาในชีวิตฉัน
+                ขอบคุณที่อยู่ข้าง ๆ แม้วันที่ฉันไม่ใช่เวอร์ชันที่ดีที่สุด
+                และขอบคุณที่ทำให้ฉันรู้ว่า…
+                ถ้าเป็นเธอ ฉันพร้อมจะเติบโตไปด้วยกันทุกวัน ❤️
+            </p>
+        </div>
+
+        <!-- ปุ่ม 5 -->
+        <div class="accordion">5. ความฝันสูงสุดของเธอ (Before → After)</div>
+        <div class="panel">
+            <p>
+                ฉันรู้ว่าเธอมีความฝันหลายอย่าง
+                แต่สำหรับฉัน… ความสุขของเธอคือสิ่งสำคัญที่สุด
+                และฉันอยากอยู่ข้าง ๆ เธอในวันที่ความฝันของเธอกลายเป็นจริง
+            </p>
+
+            <div class="img-flex">
+                <img src="before.jpg" alt="before">
+                <img src="after.jpg" alt="after">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const btns = document.querySelectorAll(".accordion");
+        btns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const panel = btn.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+
 </body>
+
 </html>

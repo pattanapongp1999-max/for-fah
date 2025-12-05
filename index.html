@@ -80,15 +80,19 @@
             }
         }
 
-        /* before-after image */
-        .img-flex {
+        /* กล่องรูป */
+        .single-img-box {
             width: 100%;
             margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
         }
 
+        .single-img-box img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* before-after image */
         .img-flex img {
             width: 100%;
             border-radius: 12px;
@@ -100,76 +104,17 @@
         .img-flex img:active {
             transform: scale(0.97);
         }
-
-        .carousel {
-            width: 100%;
-            overflow: hidden;
-            border-radius: 12px;
-            margin-top: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
-            position: relative;
-        }
-
-        .slides {
-            display: flex;
-            width: calc(100% * 5);
-            /* 5 รูป */
-            animation: slide 20s infinite;
-        }
-
-        .slides img {
-            width: 100%;
-            flex: 0 0 100%;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-
-        /* 5 รูป = ต้องเลื่อน -400% */
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-
-            20% {
-                transform: translateX(0);
-            }
-
-            25% {
-                transform: translateX(-100%);
-            }
-
-            40% {
-                transform: translateX(-100%);
-            }
-
-            45% {
-                transform: translateX(-200%);
-            }
-
-            60% {
-                transform: translateX(-200%);
-            }
-
-            65% {
-                transform: translateX(-300%);
-            }
-
-            80% {
-                transform: translateX(-300%);
-            }
-
-            85% {
-                transform: translateX(-400%);
-            }
-
-            100% {
-                transform: translateX(-400%);
-            }
-        }
     </style>
 </head>
 
 <body>
+
+    <!-- เพลงซ่อน -->
+    <div style="display:none;">
+        <iframe width="0" height="0"
+            src="https://www.youtube.com/embed/cNGjD0VG4R8?autoplay=1&loop=1&playlist=cNGjD0VG4R8&start=4"
+            frameborder="0" allow="autoplay"></iframe>
+    </div>
 
     <div class="paper">
 
@@ -184,23 +129,9 @@
                 “คนคนนี้แหละ ที่จะทำให้ทุกวันมีความหมายมากขึ้น”
             </p>
 
-            <!-- เพลงซ่อน -->
-            <div style="display:none;">
-                <iframe width="0" height="0"
-                    src="https://www.youtube.com/embed/cNGjD0VG4R8?autoplay=1&loop=1&playlist=cNGjD0VG4R8&start=4"
-                    frameborder="0" allow="autoplay">
-                </iframe>
-            </div>
-
-            <!-- Carousel -->
-            <div class="carousel">
-                <div class="slides">
-                    <img src="https://static.wixstatic.com/media/756761_4f2969a3100447fc88418e95d70f2084~mv2.jpg">
-                    <img src="https://static.wixstatic.com/media/756761_f0fbc332fe2b47f09008bb83707ee078~mv2.png">
-                    <img src="https://static.wixstatic.com/media/756761_b86b579f5ca342fba3df9b3b082469a8~mv2.png">
-                    <img src="https://static.wixstatic.com/media/756761_3ed44bb7b75242de962bfce92b66933f~mv2.png">
-                    <img src="https://static.wixstatic.com/media/756761_35783eb2cd92467480755eb17d978cbb~mv2.jpg">
-                </div>
+            <!-- รูปเดียว -->
+            <div class="single-img-box">
+                <img src="https://static.wixstatic.com/media/756761_4f2969a3100447fc88418e95d70f2084~mv2.jpg">
             </div>
         </div>
 
@@ -211,6 +142,10 @@
                 8 เดือนที่เหมือนผ่านไปเร็วมาก แต่กลับเต็มไปด้วยความอบอุ่นที่สุดในชีวิตฉัน
                 เธอทำให้ฉันรู้สึกว่า ‘ความรักดี ๆ มันมีอยู่จริง’
             </p>
+
+            <div class="single-img-box">
+                <img src="https://static.wixstatic.com/media/756761_f0fbc332fe2b47f09008bb83707ee078~mv2.png">
+            </div>
         </div>
 
         <!-- ปุ่ม 3 -->
@@ -220,6 +155,10 @@
                 การตื่นมาเห็นหน้าเธอทุกวัน การได้กินข้าวด้วยกัน การบ่น การขี้เกียจ การหัวเราะ
                 มันคือ “บ้าน” ของฉันจริง ๆ
             </p>
+
+            <div class="single-img-box">
+                <img src="https://static.wixstatic.com/media/756761_b86b579f5ca342fba3df9b3b082469a8~mv2.png">
+            </div>
         </div>
 
         <!-- ปุ่ม 4 -->
@@ -229,6 +168,10 @@
                 ขอบคุณที่เข้ามาในชีวิตฉัน ขอบคุณที่อยู่ข้าง ๆ แม้วันที่ฉันไม่ใช่เวอร์ชันที่ดีที่สุด
                 และขอบคุณที่ทำให้ฉันรู้ว่า… ถ้าเป็นเธอ ฉันพร้อมจะเติบโตไปด้วยกันทุกวัน ❤️
             </p>
+
+            <div class="single-img-box">
+                <img src="https://static.wixstatic.com/media/756761_3ed44bb7b75242de962bfce92b66933f~mv2.png">
+            </div>
         </div>
 
         <!-- ปุ่ม 5 -->

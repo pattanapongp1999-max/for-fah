@@ -128,29 +128,69 @@
         }
 
 
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            width: calc(100% * 5);
+            /* มี 5 รูป */
+            animation: slide 20s infinite;
+        }
+
+        .slides img {
+            width: 100%;
+            flex: 0 0 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* 5 รูป = ต้องเลื่อน -400% */
         @keyframes slide {
             0% {
                 transform: translateX(0);
             }
 
-            33% {
+            20% {
                 transform: translateX(0);
             }
 
-            38% {
+            25% {
                 transform: translateX(-100%);
             }
 
-            66% {
+            40% {
                 transform: translateX(-100%);
             }
 
-            71% {
+            45% {
                 transform: translateX(-200%);
+            }
+
+            60% {
+                transform: translateX(-200%);
+            }
+
+            65% {
+                transform: translateX(-300%);
+            }
+
+            80% {
+                transform: translateX(-300%);
+            }
+
+            85% {
+                transform: translateX(-400%);
             }
 
             100% {
-                transform: translateX(-200%);
+                transform: translateX(-400%);
             }
         }
     </style>

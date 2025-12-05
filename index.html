@@ -105,7 +105,6 @@
             transform: scale(0.97);
         }
 
-        /* Carousel (แก้ใหม่ทั้งหมดให้เท่ากับ toggleImg) */
         .carousel {
             width: 100%;
             overflow: hidden;
@@ -117,31 +116,45 @@
 
         .slides {
             display: flex;
-            width: 500%; /* จำนวนรูป 5 รูป */
+            width: 100%;
             animation: slide 12s infinite;
         }
 
         .slides img {
             width: 100%;
-            height: auto;  /* ปรับเท่ากับ toggleImg */
-            flex-shrink: 0;
+            height: auto;
+            flex: 0 0 100%;
+            /* แต่ละรูป = เต็มเฟรม */
+            object-fit: cover;
+            /* ทำให้ภาพเติมเต็มโดยไม่เกิดช่องว่าง */
+            border-radius: 12px;
         }
 
+
         @keyframes slide {
-            0% { transform: translateX(0); }
-            18% { transform: translateX(0); }
+            0% {
+                transform: translateX(0);
+            }
 
-            20% { transform: translateX(-100%); }
-            38% { transform: translateX(-100%); }
+            33% {
+                transform: translateX(0);
+            }
 
-            40% { transform: translateX(-200%); }
-            58% { transform: translateX(-200%); }
+            38% {
+                transform: translateX(-100%);
+            }
 
-            60% { transform: translateX(-300%); }
-            78% { transform: translateX(-300%); }
+            66% {
+                transform: translateX(-100%);
+            }
 
-            80% { transform: translateX(-400%); }
-            100% { transform: translateX(-400%); }
+            71% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(-200%);
+            }
         }
     </style>
 </head>
@@ -176,8 +189,6 @@
                     <img src="https://static.wixstatic.com/media/756761_4f2969a3100447fc88418e95d70f2084~mv2.jpg">
                     <img src="https://static.wixstatic.com/media/756761_f0fbc332fe2b47f09008bb83707ee078~mv2.png">
                     <img src="https://static.wixstatic.com/media/756761_b86b579f5ca342fba3df9b3b082469a8~mv2.png">
-                    <img src="https://static.wixstatic.com/media/756761_3ed44bb7b75242de962bfce92b66933f~mv2.png">
-                    <img src="https://static.wixstatic.com/media/756761_35783eb2cd92467480755eb17d978cbb~mv2.jpg">
                 </div>
             </div>
         </div>

@@ -108,38 +108,72 @@
         /* Carousel */
         .carousel {
             width: 100%;
+            max-height: 260px;
+            /* จำกัดความสูงเหมือนรูปทั่วไป */
             overflow: hidden;
+            /* ตัดส่วนเกินออก */
             border-radius: 12px;
             margin-top: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+            position: relative;
         }
 
         .slides {
             display: flex;
-            width: 500%; /* มี 5 รูป */
-            animation: slide 10s infinite;
+            width: 500%;
+            /* จำนวนรูป x 100% */
+            animation: slide 12s infinite;
         }
 
         .slides img {
             width: 100%;
+            height: 260px;
+            /* ให้สูงคงที่เหมือนภาพปก */
             object-fit: cover;
+            /* ครอปให้พอดีกรอบ */
+            flex-shrink: 0;
         }
 
         @keyframes slide {
-            0% { transform: translateX(0); }
-            20% { transform: translateX(0); }
+            0% {
+                transform: translateX(0);
+            }
 
-            25% { transform: translateX(-100%); }
-            45% { transform: translateX(-100%); }
+            18% {
+                transform: translateX(0);
+            }
 
-            50% { transform: translateX(-200%); }
-            70% { transform: translateX(-200%); }
+            20% {
+                transform: translateX(-100%);
+            }
 
-            75% { transform: translateX(-300%); }
-            90% { transform: translateX(-300%); }
+            38% {
+                transform: translateX(-100%);
+            }
 
-            95% { transform: translateX(-400%); }
-            100% { transform: translateX(-400%); }
+            40% {
+                transform: translateX(-200%);
+            }
+
+            58% {
+                transform: translateX(-200%);
+            }
+
+            60% {
+                transform: translateX(-300%);
+            }
+
+            78% {
+                transform: translateX(-300%);
+            }
+
+            80% {
+                transform: translateX(-400%);
+            }
+
+            100% {
+                transform: translateX(-400%);
+            }
         }
     </style>
 </head>
@@ -155,8 +189,8 @@
         <div class="accordion">1. วันที่เราได้เริ่มคบกัน</div>
         <div class="panel">
             <p>
-                แค่คิดถึงวันนั้นก็ยังยิ้มได้อยู่เลย…  
-                มันเป็นวันที่เรียบง่าย แต่มีบางอย่างในตัวเธอที่ทำให้ฉันรู้ว่า  
+                แค่คิดถึงวันนั้นก็ยังยิ้มได้อยู่เลย…
+                มันเป็นวันที่เรียบง่าย แต่มีบางอย่างในตัวเธอที่ทำให้ฉันรู้ว่า
                 “คนคนนี้แหละ ที่จะทำให้ทุกวันมีความหมายมากขึ้น”
             </p>
 
@@ -164,8 +198,7 @@
             <div style="display:none;">
                 <iframe width="0" height="0"
                     src="https://www.youtube.com/embed/cNGjD0VG4R8?autoplay=1&loop=1&playlist=cNGjD0VG4R8&start=4"
-                    frameborder="0"
-                    allow="autoplay">
+                    frameborder="0" allow="autoplay">
                 </iframe>
             </div>
 
@@ -185,8 +218,8 @@
         <div class="accordion">2. 8 เดือนที่ผ่านมากับเธอ</div>
         <div class="panel">
             <p>
-                8 เดือนที่เหมือนผ่านไปเร็วมาก  
-                แต่กลับเต็มไปด้วยความอบอุ่นที่สุดในชีวิตฉัน  
+                8 เดือนที่เหมือนผ่านไปเร็วมาก
+                แต่กลับเต็มไปด้วยความอบอุ่นที่สุดในชีวิตฉัน
                 เธอทำให้ฉันรู้สึกว่า ‘ความรักดี ๆ มันมีอยู่จริง’
             </p>
         </div>
@@ -195,9 +228,9 @@
         <div class="accordion">3. 5 เดือนที่เราใช้ชีวิตอยู่ด้วยกัน</div>
         <div class="panel">
             <p>
-                การตื่นมาเห็นหน้าเธอทุกวัน  
-                การได้กินข้าวด้วยกัน  
-                การบ่น การขี้เกียจ การหัวเราะ  
+                การตื่นมาเห็นหน้าเธอทุกวัน
+                การได้กินข้าวด้วยกัน
+                การบ่น การขี้เกียจ การหัวเราะ
                 มันคือ “บ้าน” ของฉันจริง ๆ
             </p>
         </div>
@@ -206,9 +239,9 @@
         <div class="accordion">4. สิ่งที่ฉันอยากบอกเธอที่สุด</div>
         <div class="panel">
             <p>
-                ขอบคุณที่เข้ามาในชีวิตฉัน  
-                ขอบคุณที่อยู่ข้าง ๆ แม้วันที่ฉันไม่ใช่เวอร์ชันที่ดีที่สุด  
-                และขอบคุณที่ทำให้ฉันรู้ว่า…  
+                ขอบคุณที่เข้ามาในชีวิตฉัน
+                ขอบคุณที่อยู่ข้าง ๆ แม้วันที่ฉันไม่ใช่เวอร์ชันที่ดีที่สุด
+                และขอบคุณที่ทำให้ฉันรู้ว่า…
                 ถ้าเป็นเธอ ฉันพร้อมจะเติบโตไปด้วยกันทุกวัน ❤️
             </p>
         </div>
@@ -217,8 +250,8 @@
         <div class="accordion">5. ความฝันสูงสุดของเธอ (Before → After)</div>
         <div class="panel">
             <p>
-                ฉันรู้ว่าเธอมีความฝันหลายอย่าง  
-                แต่สำหรับฉัน… ความสุขของเธอคือสิ่งสำคัญที่สุด  
+                ฉันรู้ว่าเธอมีความฝันหลายอย่าง
+                แต่สำหรับฉัน… ความสุขของเธอคือสิ่งสำคัญที่สุด
                 และฉันอยากอยู่ข้าง ๆ เธอในวันที่ความฝันของเธอกลายเป็นจริง
             </p>
 

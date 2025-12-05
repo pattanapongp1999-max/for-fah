@@ -98,6 +98,15 @@
         audio {
             display: none;
         }
+
+        #toggleImg {
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        #toggleImg:active {
+            transform: scale(0.97);
+        }
     </style>
 </head>
 
@@ -168,9 +177,16 @@
             </p>
 
             <div class="img-flex">
-                <img src="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg" alt="before">
-                <img src="https://static.wixstatic.com/media/756761_8eb757ccbe1a4b868a9cea8973df2e89~mv2.jpg" alt="after">
+                <img id="toggleImg"
+                    src="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg"
+                    data-before="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg"
+                    data-after="https://static.wixstatic.com/media/756761_e3409940a9c44149820d3c61d4613c0e~mv2.png"
+                    alt="before-after">
+                <div style="text-align:center; color:#a06a4a; font-size:16px; margin-top:5px;">
+                    แตะที่รูปเพื่อดูภาพอนาคตของเรา 💍✨
+                </div>
             </div>
+
         </div>
 
     </div>
@@ -184,6 +200,20 @@
             });
         });
     </script>
+
+    <script>
+        const img = document.getElementById("toggleImg");
+
+        img.addEventListener("click", () => {
+            const before = img.getAttribute("data-before");
+            const after = img.getAttribute("data-after");
+            const current = img.getAttribute("src");
+
+            // สลับรูป
+            img.setAttribute("src", current === before ? after : before);
+        });
+    </script>
+
 
 </body>
 

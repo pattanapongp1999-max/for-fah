@@ -1,220 +1,51 @@
-<!DOCTYPE html>
-<html lang="th">
+<style>
+    .heart {
+        position: fixed;
+        top: -10px;
+        color: #ff6b81;
+        font-size: 18px;
+        user-select: none;
+        pointer-events: none;
+        animation: fall 6s linear forwards;
+        opacity: 0.9;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Fah – My Love Letter</title>
-
-    <!-- ฟอนต์ลายมือ -->
-    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Sriracha&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            margin: 0;
-            background: #fff8f1;
-            font-family: "Sriracha", cursive;
+    @keyframes fall {
+        0% {
+            transform: translateY(0) translateX(0) rotate(0deg);
+            opacity: 1;
         }
-
-        .paper {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background: #fffdf8;
-            border: 1px solid #f0e6d8;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-            border-radius: 14px;
+        100% {
+            transform: translateY(110vh) translateX(20px) rotate(360deg);
+            opacity: 0;
         }
+    }
+</style>
 
-        h1 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #c07a5a;
-        }
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
 
-        .sub {
-            text-align: center;
-            font-size: 18px;
-            color: #a06a4a;
-            margin-bottom: 20px;
-        }
+        // สุ่มตำแหน่งข้างบน
+        heart.style.left = Math.random() * 100 + "vw";
 
-        /* ปุ่มหัวข้อ */
-        .accordion {
-            background: #fdf4e7;
-            border: 1px solid #e2d2c3;
-            border-radius: 12px;
-            padding: 15px;
-            font-size: 20px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+        // สุ่มขนาดหัวใจ
+        const size = Math.random() * 15 + 10;
+        heart.style.fontSize = size + "px";
 
-        .accordion:hover {
-            background: #f9ebd9;
-        }
+        // สุ่มความเร็ว
+        heart.style.animationDuration = (Math.random() * 2 + 4) + "s";
 
-        /* เนื้อหา */
-        .panel {
-            display: none;
-            padding: 15px 20px;
-            margin-top: -5px;
-            margin-bottom: 20px;
-            background: #fffaf4;
-            border-left: 3px solid #d8b89f;
-            border-radius: 0 0 12px 12px;
-            animation: fade 0.4s;
-        }
+        document.body.appendChild(heart);
 
-        @keyframes fade {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
+        // ลบเมื่อจบแอนิเมชัน
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+    }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* กล่องรูป */
-        .single-img-box {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .single-img-box img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-        }
-
-        /* before-after image */
-        .img-flex img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .img-flex img:active {
-            transform: scale(0.97);
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- เพลงซ่อน -->
-    <div style="display:none;">
-        <iframe width="0" height="0"
-            src="https://www.youtube.com/embed/cNGjD0VG4R8?autoplay=1&loop=1&playlist=cNGjD0VG4R8&start=4"
-            frameborder="0" allow="autoplay"></iframe>
-    </div>
-
-    <div class="paper">
-
-        <h1>ถึงฟ้า 💙</h1>
-        <div class="sub">จดหมายรักในเดือนที่ 8 และคริสต์มาสของเรา 🎄</div>
-
-        <!-- ปุ่ม 1 -->
-        <div class="accordion">1. วันที่เราได้เริ่มคบกัน</div>
-        <div class="panel">
-            <p>
-                แค่คิดถึงวันนั้นก็ยังยิ้มได้อยู่เลย… มันเป็นวันที่เรียบง่าย แต่มีบางอย่างในตัวเธอที่ทำให้ฉันรู้ว่า
-                “คนคนนี้แหละ ที่จะทำให้ทุกวันมีความหมายมากขึ้น”
-            </p>
-
-            <!-- รูปเดียว -->
-            <div class="single-img-box">
-                <img src="https://static.wixstatic.com/media/756761_4f2969a3100447fc88418e95d70f2084~mv2.jpg">
-            </div>
-        </div>
-
-        <!-- ปุ่ม 2 -->
-        <div class="accordion">2. 8 เดือนที่ผ่านมากับเธอ</div>
-        <div class="panel">
-            <p>
-                8 เดือนที่เหมือนผ่านไปเร็วมาก แต่กลับเต็มไปด้วยความอบอุ่นที่สุดในชีวิตฉัน
-                เธอทำให้ฉันรู้สึกว่า ‘ความรักดี ๆ มันมีอยู่จริง’
-            </p>
-
-            <div class="single-img-box">
-                <img src="https://static.wixstatic.com/media/756761_f0fbc332fe2b47f09008bb83707ee078~mv2.png">
-            </div>
-        </div>
-
-        <!-- ปุ่ม 3 -->
-        <div class="accordion">3. 5 เดือนที่เราใช้ชีวิตอยู่ด้วยกัน</div>
-        <div class="panel">
-            <p>
-                การตื่นมาเห็นหน้าเธอทุกวัน การได้กินข้าวด้วยกัน การบ่น การขี้เกียจ การหัวเราะ
-                มันคือ “บ้าน” ของฉันจริง ๆ
-            </p>
-
-            <div class="single-img-box">
-                <img src="https://static.wixstatic.com/media/756761_b86b579f5ca342fba3df9b3b082469a8~mv2.png">
-            </div>
-        </div>
-
-        <!-- ปุ่ม 4 -->
-        <div class="accordion">4. สิ่งที่ฉันอยากบอกเธอที่สุด</div>
-        <div class="panel">
-            <p>
-                ขอบคุณที่เข้ามาในชีวิตฉัน ขอบคุณที่อยู่ข้าง ๆ แม้วันที่ฉันไม่ใช่เวอร์ชันที่ดีที่สุด
-                และขอบคุณที่ทำให้ฉันรู้ว่า… ถ้าเป็นเธอ ฉันพร้อมจะเติบโตไปด้วยกันทุกวัน ❤️
-            </p>
-
-            <div class="single-img-box">
-                <img src="https://static.wixstatic.com/media/756761_3ed44bb7b75242de962bfce92b66933f~mv2.png">
-            </div>
-        </div>
-
-        <!-- ปุ่ม 5 -->
-        <div class="accordion">5. ความฝันสูงสุดของเธอ (Before → After)</div>
-        <div class="panel">
-            <p>
-                ฉันรู้ว่าเธอมีความฝันหลายอย่าง แต่สำหรับฉัน… ความสุขของเธอคือสิ่งสำคัญที่สุด
-                และฉันอยากอยู่ข้าง ๆ เธอในวันที่ความฝันของเธอกลายเป็นจริง
-            </p>
-
-            <div class="img-flex">
-                <img id="toggleImg"
-                    src="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg"
-                    data-before="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg"
-                    data-after="https://static.wixstatic.com/media/756761_e3409940a9c44149820d3c61d4613c0e~mv2.png">
-
-                <div style="text-align:center; color:#a06a4a; font-size:16px; margin-top:5px;">
-                    บี๋กดสิคะะะ จะเห็นอนาคตของเรานะะะ 💍✨
-                </div>
-            </div>
-        </div>
-
-    </div> <!-- .paper -->
-
-    <script>
-        // toggle panel
-        const btns = document.querySelectorAll(".accordion");
-        btns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                const panel = btn.nextElementSibling;
-                panel.style.display = (panel.style.display === "block") ? "none" : "block";
-            });
-        });
-
-        // toggle image (before/after)
-        document.getElementById("toggleImg").addEventListener("click", (e) => {
-            const img = e.target;
-            const before = img.getAttribute("data-before");
-            const after = img.getAttribute("data-after");
-            img.src = img.src.includes(before) ? after : before;
-        });
-    </script>
-
-</body>
-
-</html>
+    // ให้ตกเรื่อย ๆ ทุก 300 ms
+    setInterval(createHeart, 300);
+</script>

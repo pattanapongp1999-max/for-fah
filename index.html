@@ -105,6 +105,7 @@
             transform: scale(0.97);
         }
 
+        /* Carousel (แก้ใหม่ทั้งหมดให้เท่ากับ toggleImg) */
         .carousel {
             width: 100%;
             overflow: hidden;
@@ -116,44 +117,55 @@
 
         .slides {
             display: flex;
-            width: 100%;
+            width: auto;
             animation: slide 12s infinite;
         }
 
         .slides img {
-            width: 100%;
-            height: auto;
-            flex: 0 0 100%;
-            /* แต่ละรูป = เต็มเฟรม */
-            object-fit: cover;
-            /* ทำให้ภาพเติมเต็มโดยไม่เกิดช่องว่าง */
-            border-radius: 12px;
+            width: 300px;
+            height: 400px;
+            flex-shrink: 0;
         }
-
 
         @keyframes slide {
             0% {
                 transform: translateX(0);
             }
 
-            33% {
+            18% {
                 transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(-100%);
             }
 
             38% {
                 transform: translateX(-100%);
             }
 
-            66% {
-                transform: translateX(-100%);
+            40% {
+                transform: translateX(-200%);
             }
 
-            71% {
+            58% {
                 transform: translateX(-200%);
+            }
+
+            60% {
+                transform: translateX(-300%);
+            }
+
+            78% {
+                transform: translateX(-300%);
+            }
+
+            80% {
+                transform: translateX(-400%);
             }
 
             100% {
-                transform: translateX(-200%);
+                transform: translateX(-400%);
             }
         }
     </style>
@@ -248,41 +260,22 @@
 
     </div> <!-- end .paper -->
 
-<script>
-    const btns = document.querySelectorAll(".accordion");
-    let musicStarted = false;
-
-    btns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-
-            // เปิด/ปิด panel
-            const panel = btn.nextElementSibling;
-            panel.style.display = panel.style.display === "block" ? "none" : "block";
-
-            // เริ่มเพลงครั้งแรกหลังมีการคลิกใด ๆ
-            if (!musicStarted) {
-                const music = document.getElementById("bgmusic");
-                music.volume = 0.45;
-                music.play().catch(err => console.log("Autoplay blocked:", err));
-                musicStarted = true;
-            }
+    <script>
+        const btns = document.querySelectorAll(".accordion");
+        btns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const panel = btn.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+            });
         });
-    });
 
-    // toggle รูป before ↔ after
-    document.getElementById("toggleImg").addEventListener("click", (e) => {
-        const img = e.target;
-        const before = img.getAttribute("data-before");
-        const after = img.getAttribute("data-after");
-        img.src = img.src.includes(before) ? after : before;
-    });
-</script>
-
-
-    
-
-    <audio id="bgmusic" src="music.mp3" preload="auto" loop></audio>
-
+        document.getElementById("toggleImg").addEventListener("click", (e) => {
+            const img = e.target;
+            const before = img.getAttribute("data-before");
+            const after = img.getAttribute("data-after");
+            img.src = img.src.includes(before) ? after : before;
+        });
+    </script>
 
 </body>
 

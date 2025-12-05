@@ -105,13 +105,10 @@
             transform: scale(0.97);
         }
 
-        /* Carousel */
+        /* Carousel (แก้ใหม่ทั้งหมดให้เท่ากับ toggleImg) */
         .carousel {
             width: 100%;
-            max-height: 260px;
-            /* จำกัดความสูงเหมือนรูปทั่วไป */
             overflow: hidden;
-            /* ตัดส่วนเกินออก */
             border-radius: 12px;
             margin-top: 15px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
@@ -120,60 +117,31 @@
 
         .slides {
             display: flex;
-            width: 500%;
-            /* จำนวนรูป x 100% */
+            width: 500%; /* จำนวนรูป 5 รูป */
             animation: slide 12s infinite;
         }
 
         .slides img {
             width: 100%;
-            height: 260px;
-            /* ให้สูงคงที่เหมือนภาพปก */
-            object-fit: cover;
-            /* ครอปให้พอดีกรอบ */
+            height: auto;  /* ปรับเท่ากับ toggleImg */
             flex-shrink: 0;
         }
 
         @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
+            0% { transform: translateX(0); }
+            18% { transform: translateX(0); }
 
-            18% {
-                transform: translateX(0);
-            }
+            20% { transform: translateX(-100%); }
+            38% { transform: translateX(-100%); }
 
-            20% {
-                transform: translateX(-100%);
-            }
+            40% { transform: translateX(-200%); }
+            58% { transform: translateX(-200%); }
 
-            38% {
-                transform: translateX(-100%);
-            }
+            60% { transform: translateX(-300%); }
+            78% { transform: translateX(-300%); }
 
-            40% {
-                transform: translateX(-200%);
-            }
-
-            58% {
-                transform: translateX(-200%);
-            }
-
-            60% {
-                transform: translateX(-300%);
-            }
-
-            78% {
-                transform: translateX(-300%);
-            }
-
-            80% {
-                transform: translateX(-400%);
-            }
-
-            100% {
-                transform: translateX(-400%);
-            }
+            80% { transform: translateX(-400%); }
+            100% { transform: translateX(-400%); }
         }
     </style>
 </head>

@@ -109,13 +109,9 @@
 
 <body>
 
-    <!-- เพลงซ่อน -->
-    <div style="display:none;">
-        <audio id="bgm" autoplay loop muted>
-            <source src="perfect.mp3" type="audio/mpeg">
-        </audio>
-
-    </div>
+    <audio id="bgm" autoplay loop muted>
+        <source src="perfect.mp3" type="audio/mpeg">
+    </audio>
 
     <div class="paper">
 
@@ -271,9 +267,9 @@
 
 
     <script>
-        const bgm = document.getElementById("bgm");
-
+        // ปลด mute ให้เพลงเริ่มดังเมื่อผู้ใช้แตะหน้าจอครั้งแรก
         document.addEventListener("click", () => {
+            const bgm = document.getElementById("bgm");
             bgm.muted = false;
             bgm.play();
         }, { once: true });

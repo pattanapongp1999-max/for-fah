@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Fah – My Love Letter</title>
+    <title>เค้าให้บี๋นะคั้บบบ</title>
 
     <!-- ฟอนต์ลายมือ -->
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Sriracha&display=swap" rel="stylesheet">
@@ -115,8 +115,8 @@
 
     <div class="paper">
 
-        <h1>ถึงฟ้า 💙</h1>
-        <div class="sub">8 </div>
+        <h1>บี๋คั้บบ</h1>
+        <div class="sub">อันนี้เค้าตั้งใจทำให้มากๆเลย ขอให้เธอชอบนะะ</div>
 
         <!-- ปุ่ม 1 -->
         <div class="accordion">1. วันที่เราได้เริ่มคบกัน</div>
@@ -203,13 +203,23 @@
             });
         });
 
-        // toggle image (before/after)
         document.getElementById("toggleImg").addEventListener("click", (e) => {
             const img = e.target;
             const before = img.getAttribute("data-before");
             const after = img.getAttribute("data-after");
-            img.src = img.src.includes(before) ? after : before;
+
+            // ค่อยๆ จางลง
+            img.style.opacity = 0;
+
+            setTimeout(() => {
+                // เปลี่ยนรูปหลังจากหายสนิท
+                img.src = img.src.includes(before) ? after : before;
+
+                // ค่อยๆ กลับมาชัด
+                img.style.opacity = 1;
+            }, 500); // เวลา fade-out (ต้องตรงกับ CSS transition)
         });
+
     </script>
 
     <style>

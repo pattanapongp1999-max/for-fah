@@ -112,7 +112,7 @@
     <!-- เพลงซ่อน -->
     <div style="display:none;">
         <audio id="bgm" autoplay loop muted>
-            <source src="https://pattanapongp1999-max.github.io/for-fah/Ed%20Sheeran%20-%20Perfect.mp3" type="audio/mpeg">
+            <source src="perfect.mp3" type="audio/mpeg">
         </audio>
 
     </div>
@@ -273,9 +273,9 @@
     <script>
         const bgm = document.getElementById("bgm");
 
-        // เมื่อผู้ใช้แตะครั้งแรก → เปิดเสียงได้
         document.addEventListener("click", () => {
             bgm.muted = false;
+            bgm.play();
         }, { once: true });
     </script>
 

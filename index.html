@@ -194,7 +194,7 @@
             <p>
                 ภาษาไทยพอละ ต่อจากนี้เป็นอังกฤษบ้างนะ
                 We have so many dreams and so many things we want to do together.
-                But for the biggest dream—the one I want more than anything, 
+                But for the biggest dream—the one I want more than anything,
                 I want you to be the last person in my life, my bride, my forever.
                 (And with this view… it’s kinda romantic, right? 5555)
             </p>
@@ -242,7 +242,33 @@
 
     </script>
 
+    <script>
+        setInterval(() => {
+            const feather = document.createElement("div");
+            feather.innerHTML = "🕊️";
+            feather.style.position = "fixed";
+            feather.style.left = Math.random() * 100 + "vw";
+            feather.style.top = "-10vh";
+            feather.style.fontSize = (20 + Math.random() * 15) + "px";
+            feather.style.opacity = 0.5;
+            feather.style.animation = "fall 6s linear forwards";
+            document.body.appendChild(feather);
+            setTimeout(() => feather.remove(), 6000);
+        }, 3000);
+
+    </script>
+
     <style>
+        @keyframes fall {
+            from {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(120vh) rotate(360deg);
+            }
+        }
+
         .heart {
             position: fixed;
             top: -10px;

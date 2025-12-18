@@ -142,20 +142,18 @@
         }
 
         .panel p {
-            animation: typeFade 1.2s ease both;
+            animation: textFade 0.8s ease;
         }
 
-        @keyframes typeFade {
+        @keyframes textFade {
             from {
                 opacity: 0;
-                filter: blur(2px);
-                letter-spacing: 1px;
+                transform: translateY(5px);
             }
 
             to {
                 opacity: 1;
-                filter: blur(0);
-                letter-spacing: 0;
+                transform: translateY(0);
             }
         }
     </style>
@@ -353,36 +351,83 @@
         }, { once: true });
     </script>
 
-    <div id="endingText">ขอบคุณที่เดินด้วยกันมาถึงตรงนี้นะ 🤍</div>
+    <div id="endingOverlay">
+        <div id="endingPopup">
+            ขอบคุณที่เดินมาถึงตรงนี้นะ 🤍
+        </div>
+    </div>
 
     <style>
-        #endingText {
+        #endingOverlay {
             position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 18px;
-            color: #c07a5a;
+            inset: 0;
+            background: rgba(255, 248, 241, 0.6);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             opacity: 0;
-            transition: 1s;
             pointer-events: none;
+            transition: opacity 1s ease;
+            z-index: 999;
         }
 
-        #endingText.show {
+        #endingOverlay.show {
             opacity: 1;
+            pointer-events: auto;
+        }
+
+        #endingPopup {
+            background: #fffdf8;
+            padding: 30px 40px;
+            border-radius: 18px;
+            font-size: 20px;
+            color: #c07a5a;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 180, 150, 0.35);
+            animation: popupIn 1.2s ease;
+        }
+
+        @keyframes popupIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
     </style>
 
+
     <script>
-        window.addEventListener("scroll", () => {
-            const text = document.getElementById("endingText");
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-                text.classList.add("show");
+        let endingShown = false;
+
+        document.getElementById("toggleImg").addEventListener("click", (e) => {
+            const img = e.target;
+            const before = img.getAttribute("data-before");
+            const after = img.getAttribute("data-after");
+
+            img.style.opacity = 0;
+
+            setTimeout(() => {
+                img.src = img.src.includes(before) ? after : before;
+                img.style.opacity = 1;
+            }, 1000);
+
+            // แสดงข้อความจบ หลังจากเห็นรูปแต่งงาน
+            if (!endingShown && img.src.includes(after)) {
+                endingShown = true;
+
+                setTimeout(() => {
+                    document.getElementById("endingOverlay").classList.add("show");
+                }, 5000);
             }
         });
 
     </script>
-
 
 
 </body>

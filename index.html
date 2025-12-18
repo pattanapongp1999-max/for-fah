@@ -312,6 +312,13 @@
             });
         });
 
+        const lastBtn = document.querySelectorAll(".accordion")[4];
+
+        lastBtn.addEventListener("click", () => {
+            document.body.style.backgroundColor = "#fff5ef";
+        });
+
+
         document.getElementById("toggleImg").addEventListener("click", (e) => {
             const img = e.target;
             const before = img.getAttribute("data-before");

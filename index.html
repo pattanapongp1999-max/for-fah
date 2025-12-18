@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>เค้าให้บี๋นะคั้บบบ</title>
-
-    <!-- ฟอนต์ลายมือ -->
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Sriracha&display=swap" rel="stylesheet">
 
     <style>
@@ -26,13 +24,6 @@
             border-radius: 14px;
             animation: paperIn 1.2s ease;
             transform-origin: top center;
-            background:
-                linear-gradient(#fffdf8, #fffaf3),
-                repeating-linear-gradient(to bottom,
-                    rgba(0, 0, 0, 0.02),
-                    rgba(0, 0, 0, 0.02) 1px,
-                    transparent 1px,
-                    transparent 24px);
         }
 
         @keyframes paperIn {
@@ -62,7 +53,6 @@
             margin-bottom: 20px;
         }
 
-        /* ปุ่มหัวข้อ */
         .accordion {
             background: #fdf4e7;
             border: 1px solid #e2d2c3;
@@ -93,8 +83,6 @@
             opacity: 1;
         }
 
-
-        /* เนื้อหา */
         .panel {
             display: none;
             padding: 15px 20px;
@@ -119,7 +107,6 @@
         }
 
 
-        /* กล่องรูป */
         .single-img-box {
             width: 100%;
             margin-top: 10px;
@@ -131,7 +118,6 @@
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
         }
 
-        /* before-after image */
         .img-flex img {
             width: 100%;
             border-radius: 12px;
@@ -168,26 +154,6 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        #toggleImg::after {
-            content: "✨";
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            animation: sparkle 2s infinite;
-        }
-
-        @keyframes sparkle {
-
-            0%,
-            100% {
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 1;
             }
         }
     </style>
@@ -300,10 +266,9 @@
             </div>
         </div>
 
-    </div> <!-- .paper -->
+    </div> 
 
     <script>
-        // toggle panel
         const btns = document.querySelectorAll(".accordion");
         btns.forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -312,28 +277,17 @@
             });
         });
 
-        const lastBtn = document.querySelectorAll(".accordion")[4];
-
-        lastBtn.addEventListener("click", () => {
-            document.body.style.backgroundColor = "#fff5ef";
-        });
-
-
         document.getElementById("toggleImg").addEventListener("click", (e) => {
             const img = e.target;
             const before = img.getAttribute("data-before");
             const after = img.getAttribute("data-after");
 
-            // ค่อยๆ จางลง
             img.style.opacity = 0;
 
             setTimeout(() => {
-                // เปลี่ยนรูปหลังจากหายสนิท
                 img.src = img.src.includes(before) ? after : before;
-
-                // ค่อยๆ กลับมาชัด
                 img.style.opacity = 1;
-            }, 1000); // เวลา fade-out (ต้องตรงกับ CSS transition)
+            }, 1000);
         });
 
     </script>
@@ -371,31 +325,25 @@
             heart.classList.add("heart");
             heart.innerHTML = "💖";
 
-            // สุ่มตำแหน่งข้างบน
             heart.style.left = Math.random() * 100 + "vw";
 
-            // สุ่มขนาดหัวใจ
             const size = Math.random() * 15 + 10;
             heart.style.fontSize = size + "px";
 
-            // สุ่มความเร็ว
             heart.style.animationDuration = (Math.random() * 2 + 4) + "s";
 
             document.body.appendChild(heart);
 
-            // ลบเมื่อจบแอนิเมชัน
             setTimeout(() => {
                 heart.remove();
             }, 7000);
         }
-
-        // ให้ตกเรื่อย ๆ ทุก 300 ms
+        
         setInterval(createHeart, 500);
     </script>
 
 
     <script>
-        // ปลด mute ให้เพลงเริ่มดังเมื่อผู้ใช้แตะหน้าจอครั้งแรก
         document.addEventListener("click", () => {
             const bgm = document.getElementById("bgm");
             bgm.muted = false;

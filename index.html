@@ -142,18 +142,20 @@
         }
 
         .panel p {
-            animation: textFade 0.8s ease;
+            animation: typeFade 1.2s ease both;
         }
 
-        @keyframes textFade {
+        @keyframes typeFade {
             from {
                 opacity: 0;
-                transform: translateY(5px);
+                filter: blur(2px);
+                letter-spacing: 1px;
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                filter: blur(0);
+                letter-spacing: 0;
             }
         }
     </style>
@@ -162,7 +164,7 @@
 <body>
 
     <audio id="bgm" autoplay loop muted>
-        <source src="ruk-rak-pop.mp3" type="audio/mpeg">
+        <source src="rak.mp3" type="audio/mpeg">
     </audio>
 
     <div class="paper">
@@ -266,7 +268,7 @@
             </div>
         </div>
 
-    </div> 
+    </div>
 
     <script>
         const btns = document.querySelectorAll(".accordion");
@@ -338,7 +340,7 @@
                 heart.remove();
             }, 7000);
         }
-        
+
         setInterval(createHeart, 500);
     </script>
 
@@ -356,4 +358,3 @@
 </body>
 
 </html>
-

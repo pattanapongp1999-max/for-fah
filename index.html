@@ -353,6 +353,36 @@
         }, { once: true });
     </script>
 
+    <div id="endingText">ขอบคุณที่เดินด้วยกันมาถึงตรงนี้นะ 🤍</div>
+
+    <style>
+        #endingText {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            color: #c07a5a;
+            opacity: 0;
+            transition: 1s;
+            pointer-events: none;
+        }
+
+        #endingText.show {
+            opacity: 1;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("scroll", () => {
+            const text = document.getElementById("endingText");
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+                text.classList.add("show");
+            }
+        });
+
+    </script>
+
 
 
 </body>

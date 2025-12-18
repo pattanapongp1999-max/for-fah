@@ -309,6 +309,90 @@
     </script>
 
 
+<style>
+    .carousel {
+        position: relative;
+        margin-top: 25px;
+        overflow: hidden;
+        border-radius: 14px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.12);
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.6s ease;
+    }
+
+    .carousel-track img {
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 14px;
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.7);
+        border: none;
+        font-size: 22px;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 50%;
+        color: #c07a5a;
+    }
+
+    .carousel-btn:hover {
+        background: rgba(255,255,255,0.9);
+    }
+
+    .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-btn.next {
+        right: 10px;
+    }
+</style>
+
+
+<!-- Carousel ความทรงจำ -->
+<div class="carousel">
+    <div class="carousel-track" id="carouselTrack">
+        <img src="https://static.wixstatic.com/media/756761_4f2969a3100447fc88418e95d70f2084~mv2.jpg">
+        <img src="https://static.wixstatic.com/media/756761_fd7e475f81394817b0cb252777d764c2~mv2.jpg">
+        <img src="https://static.wixstatic.com/media/756761_6b0b2d190ac644308ca254efa7ffe60a~mv2.jpg">
+        <img src="https://static.wixstatic.com/media/756761_b6a4495f4a8e4883b1f4d8ba197d4ca5~mv2.jpg">
+        <img src="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg">
+    </div>
+
+    <button class="carousel-btn prev" onclick="prevSlide()">‹</button>
+    <button class="carousel-btn next" onclick="nextSlide()">›</button>
+</div>
+
+
+<script>
+    let currentIndex = 0;
+    const track = document.getElementById("carouselTrack");
+    const slides = track.children;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    }
+</script>
+
+
+
 
 </body>
 

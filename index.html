@@ -348,15 +348,22 @@
   <script>
     document.addEventListener("click", () => {
       const bgm = document.getElementById("bgm");
-      if (!bgm) return;
 
+      // รอให้ metadata โหลดก่อน ถึงจะ jump ไปที่ 0:30 ได้
       bgm.addEventListener("loadedmetadata", () => {
-        bgm.currentTime = 30;
+        bgm.currentTime = 30; // ⬅️ เริ่มที่นาที 0:30 ของเพลง
         bgm.muted = false;
         bgm.play();
       }, { once: true });
+
+      // เผื่อกรณี metadata โหลดเร็วมาก
+      bgm.load();
     }, { once: true });
   </script>
+
+
+
+
 
 
 </body>

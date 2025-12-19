@@ -186,7 +186,7 @@
 <body>
 
   <audio id="bgm" loop muted>
-    <source src="ruk-rak-pop.mp3" type="audio/mpeg">
+    <source src="latest-music.mp3" type="audio/mpeg">
   </audio>
 
   <div class="paper">
@@ -349,14 +349,12 @@
     document.addEventListener("click", () => {
       const bgm = document.getElementById("bgm");
 
-      // รอให้ metadata โหลดก่อน ถึงจะ jump ไปที่ 0:30 ได้
       bgm.addEventListener("loadedmetadata", () => {
-        bgm.currentTime = 30; // ⬅️ เริ่มที่นาที 0:30 ของเพลง
+        bgm.currentTime = 45; 
         bgm.muted = false;
         bgm.play();
       }, { once: true });
 
-      // เผื่อกรณี metadata โหลดเร็วมาก
       bgm.load();
     }, { once: true });
   </script>

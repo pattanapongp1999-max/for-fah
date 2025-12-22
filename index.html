@@ -359,7 +359,71 @@
     }, { once: true });
   </script>
 
+<div id="sweetPopup" class="sweet-popup">
+    <div class="sweet-box">
+        ฮั่นแน่~<br>
+        เข้ามาอ่านอีกแย้วว 🤍
+        <div class="sweet-close">แตะให้ปิด</div>
+    </div>
+</div>
 
+<style>
+.sweet-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: popupFade 0.5s ease;
+}
+
+.sweet-box {
+    background: #fffdf8;
+    padding: 28px 30px;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 22px;
+    color: #a06a4a;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    animation: popupPop 0.6s ease;
+}
+
+.sweet-close {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #c0a28b;
+}
+
+@keyframes popupPop {
+    0% {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popupFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+
+<script>
+setTimeout(() => {
+    const popup = document.getElementById("sweetPopup");
+    popup.style.display = "flex";
+}, 4000); // เด้งหลัง 4 วิ
+
+document.getElementById("sweetPopup").addEventListener("click", () => {
+    document.getElementById("sweetPopup").style.display = "none";
+});
+</script>
 
 
 
@@ -367,3 +431,4 @@
 </body>
 
 </html>
+

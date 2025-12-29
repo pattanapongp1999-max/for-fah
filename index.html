@@ -186,7 +186,7 @@
 <body>
 
     <audio id="bgm" loop muted>
-        <source src="piano.mp3" type="audio/mpeg">
+        <source src="fly-away.mp3" type="audio/mpeg">
     </audio>
 
     <div class="paper">
@@ -377,7 +377,7 @@
             const bgm = document.getElementById("bgm");
 
             bgm.addEventListener("loadedmetadata", () => {
-                bgm.currentTime = 80;
+                bgm.currentTime = 40;
                 bgm.muted = false;
                 bgm.play();
             }, { once: true });
@@ -388,7 +388,7 @@
 
     <div id="sweetPopup" class="sweet-popup">
         <div class="sweet-box">
-            คิดถึงเค้าอยู่ใช่มั้ยนะ<br>ถ้าคิดถึงก็เปิดอ่านบ่อยๆนะ 🤍
+            คิดถึงเค้าอยู่ใช่มั้ยนะ<br>ถ้าคิดถึงก็เปิดอ่านบ่อยๆนะ 🤍<br>มีอัพเดทเพิ่มด้วยแหละ
         </div>
     </div>
 

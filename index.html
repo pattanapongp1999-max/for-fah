@@ -2,432 +2,453 @@
 <html lang="th">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>เค้าให้บี๋นะคั้บบบ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Sriracha&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เค้าให้บี๋นะคั้บบบ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Sriracha&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      background: #fff8f1;
-      font-family: "Sriracha", "cursive";
-    }
+    <style>
+        body {
+            margin: 0;
+            background: #fff8f1;
+            font-family: "Sriracha", "cursive";
+        }
 
-    .paper {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 30px;
-      background: #fffdf8;
-      border: 1px solid #f0e6d8;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-      border-radius: 14px;
-      animation: paperIn 1.2s ease;
-      transform-origin: top center;
-    }
+        .paper {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fffdf8;
+            border: 1px solid #f0e6d8;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+            border-radius: 14px;
+            animation: paperIn 1.2s ease;
+            transform-origin: top center;
+        }
 
-    @keyframes paperIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.95) translateY(20px);
-      }
+        @keyframes paperIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
 
-      100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-
-
-    h1 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 10px;
-      color: #c07a5a;
-    }
-
-    .sub {
-      text-align: center;
-      font-size: 18px;
-      color: #a06a4a;
-      margin-bottom: 20px;
-    }
-
-    .accordion {
-      background: #fdf4e7;
-      border: 1px solid #e2d2c3;
-      border-radius: 12px;
-      padding: 15px;
-      font-size: 20px;
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-      position: relative;
-    }
-
-    .accordion:hover {
-      background: #f9ebd9;
-    }
-
-    .accordion::after {
-      content: "♡";
-      position: absolute;
-      right: 18px;
-      opacity: 0.4;
-      transition: 0.3s;
-    }
-
-    .accordion:hover::after {
-      content: "💗";
-      transform: scale(1.2);
-      opacity: 1;
-    }
-
-    .panel {
-      display: none;
-      padding: 15px 20px;
-      margin-top: -5px;
-      margin-bottom: 20px;
-      background: #fffaf4;
-      border-left: 3px solid #d8b89f;
-      border-radius: 0 0 12px 12px;
-      animation: fade 0.4s;
-    }
-
-    @keyframes fade {
-      from {
-        opacity: 0;
-        transform: translateY(-8px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
 
 
-    .single-img-box {
-      width: 100%;
-      margin-top: 10px;
-    }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #c07a5a;
+        }
 
-    .single-img-box img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-    }
+        .sub {
+            text-align: center;
+            font-size: 18px;
+            color: #a06a4a;
+            margin-bottom: 20px;
+        }
 
-    .img-flex img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-      cursor: pointer;
-      transition: 0.3s;
-    }
+        .accordion {
+            background: #fdf4e7;
+            border: 1px solid #e2d2c3;
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            position: relative;
+        }
 
-    .img-flex img:active {
-      transform: scale(0.97);
-    }
+        .accordion:hover {
+            background: #f9ebd9;
+        }
 
-    .single-img-box img,
-    .img-flex img {
-      transition: 0.4s;
-    }
+        .accordion::after {
+            content: "♡";
+            position: absolute;
+            right: 18px;
+            opacity: 0.4;
+            transition: 0.3s;
+        }
 
-    .single-img-box img:hover,
-    .img-flex img:hover {
-      box-shadow: 0 0 20px rgba(255, 180, 150, 0.45);
-      transform: scale(1.01);
-    }
+        .accordion:hover::after {
+            content: "💗";
+            transform: scale(1.2);
+            opacity: 1;
+        }
 
-    .panel p {
-      animation: textFade 0.8s ease;
-    }
+        .panel {
+            display: none;
+            padding: 15px 20px;
+            margin-top: -5px;
+            margin-bottom: 20px;
+            background: #fffaf4;
+            border-left: 3px solid #d8b89f;
+            border-radius: 0 0 12px 12px;
+            animation: fade 0.4s;
+        }
 
-    @keyframes textFade {
-      from {
-        opacity: 0;
-        transform: translateY(5px);
-      }
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .heart {
-      position: fixed;
-      top: -10px;
-      color: #ff6b81;
-      font-size: 18px;
-      user-select: none;
-      pointer-events: none;
-      animation: fall 6s linear forwards;
-      opacity: 0.9;
-      filter: drop-shadow(0 0 4px rgba(255, 120, 150, 0.5));
-    }
 
-    @keyframes fall {
-      0% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-        opacity: 1;
-      }
+        .single-img-box {
+            width: 100%;
+            margin-top: 10px;
+        }
 
-      100% {
-        transform: translateY(110vh) translateX(20px) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  </style>
+        .single-img-box img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .img-flex img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .img-flex img:active {
+            transform: scale(0.97);
+        }
+
+        .single-img-box img,
+        .img-flex img {
+            transition: 0.4s;
+        }
+
+        .single-img-box img:hover,
+        .img-flex img:hover {
+            box-shadow: 0 0 20px rgba(255, 180, 150, 0.45);
+            transform: scale(1.01);
+        }
+
+        .panel p {
+            animation: textFade 0.8s ease;
+        }
+
+        @keyframes textFade {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart {
+            position: fixed;
+            top: -10px;
+            color: #ff6b81;
+            font-size: 18px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall 6s linear forwards;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 4px rgba(255, 120, 150, 0.5));
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) translateX(20px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <audio id="bgm" loop muted>
-    <source src="piano.mp3" type="audio/mpeg">
-  </audio>
+    <audio id="bgm" loop muted>
+        <source src="piano.mp3" type="audio/mpeg">
+    </audio>
 
-  <div class="paper">
+    <div class="paper">
 
-    <h1>บี๋คั้บบ</h1>
-    <div class="sub">อันนี้เค้าตั้งใจทำให้มากๆเลย ขอให้เธอชอบนะะ (เปิดเสียงโด้ยย มันมีเพลง)</div>
+        <h1>บี๋คั้บบ</h1>
+        <div class="sub">อันนี้เค้าตั้งใจทำให้มากๆเลย ขอให้เธอชอบนะะ (เปิดเสียงโด้ยย มันมีเพลง)</div>
 
-    <!-- ปุ่ม 1 -->
-    <div class="accordion">ช่วงแรกๆตอนที่คุย</div>
-    <div class="panel">
-      <p style="margin-top: 0px;">
-        ช่วงแรกๆเค้ายอมรับว่า เค้าชอบเธอมากกกก เธอตรง Type เค้าทุกอย่างเลย แล้วก็ยอมรับเลยว่า
-        ไม่สนแล้วว่าจะดีหรือไม่ดี มันชอบมากเลยอะะ ยิ่งคุยยิ่งรู้สึกชอบอะ มันมีผีเสื้อบินที่ท้องตลอดๆ
-        แล้วก็ลุ้นว่าส่งข้อความนี้ไป ส่งไรไป เธอจะโอเคไหมวะไรงี้ ตอนแผ่นดินไหวมันตั้ง 3-4 ชมนะ แต่มันดูไวๆมากเลย
-        แต่พอเสร็จแยกกัน คิดว่า คงจะจบแล้วมั้ง แต่มันไปต่อได้เฉยเลย ก็งงเหมือนกัน 5555555 (อาจเป็นเพราะ ROV
-        ด้วยมั้งนะ)
-      </p>
+        <!-- ปุ่ม 1 -->
+        <div class="accordion">ช่วงแรกๆตอนที่คุย</div>
+        <div class="panel">
+            <p style="margin-top: 0px;">
+                ช่วงแรกๆเค้ายอมรับว่า เค้าชอบเธอมากกกก เธอตรง Type เค้าทุกอย่างเลย แล้วก็ยอมรับเลยว่า
+                ไม่สนแล้วว่าจะดีหรือไม่ดี มันชอบมากเลยอะะ ยิ่งคุยยิ่งรู้สึกชอบอะ มันมีผีเสื้อบินที่ท้องตลอดๆ
+                แล้วก็ลุ้นว่าส่งข้อความนี้ไป ส่งไรไป เธอจะโอเคไหมวะไรงี้ ตอนแผ่นดินไหวมันตั้ง 3-4 ชมนะ แต่มันดูไวๆมากเลย
+                แต่พอเสร็จแยกกัน คิดว่า คงจะจบแล้วมั้ง แต่มันไปต่อได้เฉยเลย ก็งงเหมือนกัน 5555555 (อาจเป็นเพราะ ROV
+                ด้วยมั้งนะ)
+            </p>
 
-      <!-- รูปเดียว -->
-      <div class="single-img-box">
-        <img src="https://static.wixstatic.com/media/756761_4f2969a3100447fc88418e95d70f2084~mv2.jpg">
-      </div>
-    </div>
-
-    <!-- ปุ่ม 2 -->
-    <div class="accordion">8 เดือนที่ผ่านมาแม็ค ฟ้า</div>
-    <div class="panel">
-      <p style="margin-top: 0px;">
-        ยอมรับว่า เคยเป็นกังวลอยู่ เพราะเธอมีเพื่อนเยอะ แล้วก็กลัวเธอชอบไปเที่ยวบ่อย
-        เพราะตอนนั้นออกบ่อยอยู่ แอบคิดใจใจตอนนั้น มันจะเกิดไรทุกเดือนวะ55555 แต่ล่าสุดเธอเคลียละ
-        ว่าเธอจะไปงานเพื่อนที่สนิทที่สุดจริงๆ 2 คน (เห็นมั้ยเค้าจำได้นะ) แต่พอได้รู้จัก
-        เรียนรู้มากขึ้น เออ เธอปรับเข้าหาเค้าแบบชัดเจนมาก อะไรที่เค้าไม่โอเค ไม่ชอบ เธอไม่ยุ่งเลย ไม่แตะเลย
-        ทำให้ตลอด พอมันเข้าจุดลงตัว มันสบายใจมากเลย พอยิ่งคบมา
-        ก็เห็นชัดว่าชอบไรเหมือนกัน กินเหมือนกัน ชอบสิ่งคล้ายๆกัน ไปเที่ยวก็ชอบเหมือนกัน ได้รู้จักที่บ้านเธอ
-        บ้านเค้า มันดีมากเลยอะ เพิ่งเคยได้เห็นไรแบบนี้เหมือนกัน มันฟิลแบบว่า ความรักผู้ใหญ่มากเลยคั้บ
-        อาจจะมีช่วงเวลาที่เราไม่เข้าใจกันบ้าง นอย ทะเลาะกัน แต่เราก็พร้อมเข้าใจ ปรับ ให้อภัยกัน
-        นี่คือสิ่งที่ดีสุดสำหรับเค้าแล้วนะ
-        ในหัวเค้าไม่เคยมีคำว่า จบ หรือ พอ เลยนะคั้บบี๋
-      </p>
-
-      <div class="single-img-box">
-        <img src="https://static.wixstatic.com/media/756761_fd7e475f81394817b0cb252777d764c2~mv2.jpg">
-      </div>
-    </div>
-
-    <!-- ปุ่ม 3 -->
-    <div class="accordion">Love Mansion</div>
-    <div class="panel">
-      <p style="margin-top: 0px;">
-        มันเป็นที่ๆเค้าจะจดจำไปจนเค้าตายเลยนะคั้บบ มันคือรังรักของเราที่แรก ที่ๆเราเดินทางตามหา
-        ทั่วกรุงเทพเลยก็ว่าได้ วางแผนทั้งการเดินทาง การใช้ชีวิต เงิน ทุกอย่าง
-        มันมีความหมายสำหรับชีวิตเค้ามากเลยนะบี๋ เค้าเอ็นดูมองคู่เรามากเลยนะ มันแบบว่า
-        สู้มาด้วยกันของจริงอะอันนี้
-        และที่นี่ก็คือที่แรกที่เค้าได้อยู่กับแฟน ก็คือเธอนะแหละ ตื่นเต้นสุดๆเลยนะ จำได้ไหม ช่วงที่เรา count down
-        วันที่จะออกมาอะ โครตตื่นเต้นเลยเนาะ 5555
-      </p>
-
-      <div class="single-img-box">
-        <img src="https://static.wixstatic.com/media/756761_6b0b2d190ac644308ca254efa7ffe60a~mv2.jpg">
-      </div>
-    </div>
-
-    <!-- ปุ่ม 4 -->
-    <div class="accordion">สิ่งที่เค้าอยากบอกเธอที่สุด</div>
-    <div class="panel">
-      <p style="margin-top: 0px;">
-        สิ่งที่เค้าอยากบอกเธอเลยจริงๆก็คือ เค้าเป็นห่วงเธอมากเลยนะ ทั้งสุขภาพ ทั้งจิตใจ เค้าจะคอยซัพพอร์ต
-        อยู่ตรงนี้ข้างๆ
-        มันจะผ่านไป เหมือนที่เคยเป็นมานะแหละ
-        เค้าไม่รู้หรอกว่า มันจะเป็นไปตามที่เราฝันไว้ไหม แต่เค้าจะทำให้มันดีที่สุด เค้าอยากให้มันเป็นจริงนะ เค้าตั้งใจมาก
-        ส่วนอีกเรื่อง คือ เธอไม่ต้องกลัวเค้าเบื่อ นอกใจ (ตั้งแต่วันที่ 26 เมษายน 2568
-        ผู้หญิงทุกคนในโลก ไม่มีใครสวยหรือน่ารักแล้วคั้บ) หรือรักเธอน้อยลงเลยนะ
-        เค้ารู้สึกยินดีอย่างมากเลยนะ กับทุกสิ่งที่เค้าทำให้เธอ ไม่ว่าจะเป็น การดูแล การพาไปเที่ยว การทำไรให้
-        จริงๆแล้วมันไม่ได้เยอะอะไรสำหรับเค้าเลยนะ เพราะเค้าเคยบอกเธอตั้งแต่แรกแล้วว่า เค้าอยากดูแลเธอ
-        มันจะดีกว่าเดิม และดีขึ้นเรื่อยๆ และก็ขอบคุณเธอสำหรับทุกอย่างที่ให้เค้ามากๆเลยนะ มันเยอะมากเลย
-        ขอบคุณกี่รอบก็คงจะไม่หมด เค้าอาจจะมีน้อยใจบ้าง ขี้หวง มีคิดมากบ้าง เพราะชีวิตเค้ามันเคยเจ็บปวด เคยผิดหวัง
-        นับร้อยเรื่อง มันก็เลยกลัว แต่เธออย่าถือสาเค้าเลยนะ มันเป็นเพราะว่า
-        เค้ากลัวการที่ไม่มีเธออยู่ในชีวิต กลัวมว้ากกกกกกก
-      </p>
-
-      <div class="single-img-box">
-        <img src="https://static.wixstatic.com/media/756761_b6a4495f4a8e4883b1f4d8ba197d4ca5~mv2.jpg">
-      </div>
-    </div>
-
-    <!-- ปุ่ม 5 -->
-    <div class="accordion">ความฝันสูงสุดของเค้า</div>
-    <div class="panel">
-      <p style="margin-top: 0px;">
-        ภาษาไทยพอละ ต่อจากนี้เป็นอังกฤษบ้างนะ
-        We have so many dreams and many things we want to do together.
-        But for the biggest dream the one I want more than anything, That I want you to be the last person in my life,
-        my bride, my forever.
-        (ขอบคุณที่เดินด้วยกันจนมาถึงวันนี้นะ ขอบคุณจริงๆ)
-      </p>
-
-      <div class="img-flex">
-        <img id="toggleImg" src="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg"
-          data-before="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg"
-          data-after="https://static.wixstatic.com/media/756761_e3409940a9c44149820d3c61d4613c0e~mv2.png">
-
-        <div style="text-align:center; color:#a06a4a; font-size:16px; margin-top:5px;">
-          Click to see our future. 💍✨
+            <!-- รูปเดียว -->
+            <div class="single-img-box">
+                <img src="https://static.wixstatic.com/media/756761_4f2969a3100447fc88418e95d70f2084~mv2.jpg">
+            </div>
         </div>
-      </div>
+
+        <!-- ปุ่ม 2 -->
+        <div class="accordion">8 เดือนที่ผ่านมาแม็ค ฟ้า</div>
+        <div class="panel">
+            <p style="margin-top: 0px;">
+                ยอมรับว่า เคยเป็นกังวลอยู่ เพราะเธอมีเพื่อนเยอะ แล้วก็กลัวเธอชอบไปเที่ยวบ่อย
+                เพราะตอนนั้นออกบ่อยอยู่ แอบคิดใจใจตอนนั้น มันจะเกิดไรทุกเดือนวะ55555 แต่ล่าสุดเธอเคลียละ
+                ว่าเธอจะไปงานเพื่อนที่สนิทที่สุดจริงๆ 2 คน (เห็นมั้ยเค้าจำได้นะ) แต่พอได้รู้จัก
+                เรียนรู้มากขึ้น เออ เธอปรับเข้าหาเค้าแบบชัดเจนมาก อะไรที่เค้าไม่โอเค ไม่ชอบ เธอไม่ยุ่งเลย ไม่แตะเลย
+                ทำให้ตลอด พอมันเข้าจุดลงตัว มันสบายใจมากเลย พอยิ่งคบมา
+                ก็เห็นชัดว่าชอบไรเหมือนกัน กินเหมือนกัน ชอบสิ่งคล้ายๆกัน ไปเที่ยวก็ชอบเหมือนกัน ได้รู้จักที่บ้านเธอ
+                บ้านเค้า มันดีมากเลยอะ เพิ่งเคยได้เห็นไรแบบนี้เหมือนกัน มันฟิลแบบว่า ความรักผู้ใหญ่มากเลยคั้บ
+                อาจจะมีช่วงเวลาที่เราไม่เข้าใจกันบ้าง นอย ทะเลาะกัน แต่เราก็พร้อมเข้าใจ ปรับ ให้อภัยกัน
+                นี่คือสิ่งที่ดีสุดสำหรับเค้าแล้วนะ
+                ในหัวเค้าไม่เคยมีคำว่า จบ หรือ พอ เลยนะคั้บบี๋
+            </p>
+
+            <div class="single-img-box">
+                <img src="https://static.wixstatic.com/media/756761_fd7e475f81394817b0cb252777d764c2~mv2.jpg">
+            </div>
+        </div>
+
+        <!-- ปุ่ม 3 -->
+        <div class="accordion">Love Mansion</div>
+        <div class="panel">
+            <p style="margin-top: 0px;">
+                มันเป็นที่ๆเค้าจะจดจำไปจนเค้าตายเลยนะคั้บบ มันคือรังรักของเราที่แรก ที่ๆเราเดินทางตามหา
+                ทั่วกรุงเทพเลยก็ว่าได้ วางแผนทั้งการเดินทาง การใช้ชีวิต เงิน ทุกอย่าง
+                มันมีความหมายสำหรับชีวิตเค้ามากเลยนะบี๋ เค้าเอ็นดูมองคู่เรามากเลยนะ มันแบบว่า
+                สู้มาด้วยกันของจริงอะอันนี้
+                และที่นี่ก็คือที่แรกที่เค้าได้อยู่กับแฟน ก็คือเธอนะแหละ ตื่นเต้นสุดๆเลยนะ จำได้ไหม ช่วงที่เรา count down
+                วันที่จะออกมาอะ โครตตื่นเต้นเลยเนาะ 5555
+            </p>
+
+            <div class="single-img-box">
+                <img src="https://static.wixstatic.com/media/756761_6b0b2d190ac644308ca254efa7ffe60a~mv2.jpg">
+            </div>
+        </div>
+
+        <!-- ปุ่ม 4 -->
+        <div class="accordion">สิ่งที่เค้าอยากบอกเธอที่สุด</div>
+        <div class="panel">
+            <p style="margin-top: 0px;">
+                สิ่งที่เค้าอยากบอกเธอเลยจริงๆก็คือ เค้าเป็นห่วงเธอมากเลยนะ ทั้งสุขภาพ ทั้งจิตใจ เค้าจะคอยซัพพอร์ต
+                อยู่ตรงนี้ข้างๆ
+                มันจะผ่านไป เหมือนที่เคยเป็นมานะแหละ
+                เค้าไม่รู้หรอกว่า มันจะเป็นไปตามที่เราฝันไว้ไหม แต่เค้าจะทำให้มันดีที่สุด เค้าอยากให้มันเป็นจริงนะ
+                เค้าตั้งใจมาก
+                ส่วนอีกเรื่อง คือ เธอไม่ต้องกลัวเค้าเบื่อ นอกใจ (ตั้งแต่วันที่ 26 เมษายน 2568
+                ผู้หญิงทุกคนในโลก ไม่มีใครสวยหรือน่ารักแล้วคั้บ) หรือรักเธอน้อยลงเลยนะ
+                เค้ารู้สึกยินดีอย่างมากเลยนะ กับทุกสิ่งที่เค้าทำให้เธอ ไม่ว่าจะเป็น การดูแล การพาไปเที่ยว การทำไรให้
+                จริงๆแล้วมันไม่ได้เยอะอะไรสำหรับเค้าเลยนะ เพราะเค้าเคยบอกเธอตั้งแต่แรกแล้วว่า เค้าอยากดูแลเธอ
+                มันจะดีกว่าเดิม และดีขึ้นเรื่อยๆ และก็ขอบคุณเธอสำหรับทุกอย่างที่ให้เค้ามากๆเลยนะ มันเยอะมากเลย
+                ขอบคุณกี่รอบก็คงจะไม่หมด เค้าอาจจะมีน้อยใจบ้าง ขี้หวง มีคิดมากบ้าง เพราะชีวิตเค้ามันเคยเจ็บปวด
+                เคยผิดหวัง
+                นับร้อยเรื่อง มันก็เลยกลัว แต่เธออย่าถือสาเค้าเลยนะ มันเป็นเพราะว่า
+                เค้ากลัวการที่ไม่มีเธออยู่ในชีวิต กลัวมว้ากกกกกกก
+            </p>
+
+            <div class="single-img-box">
+                <img src="https://static.wixstatic.com/media/756761_b6a4495f4a8e4883b1f4d8ba197d4ca5~mv2.jpg">
+            </div>
+        </div>
+
+        <!-- ปุ่ม 5 -->
+        <div class="accordion">ความฝันสูงสุดของเค้า</div>
+        <div class="panel">
+            <p style="margin-top: 0px;">
+                ภาษาไทยพอละ ต่อจากนี้เป็นอังกฤษบ้างนะ
+                We have so many dreams and many things we want to do together.
+                But for the biggest dream the one I want more than anything, That I want you to be the last person in my
+                life,
+                my bride, my forever.
+                (ขอบคุณที่เดินด้วยกันจนมาถึงวันนี้นะ ขอบคุณจริงๆ)
+            </p>
+
+            <div class="img-flex">
+                <img id="toggleImg"
+                    src="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg"
+                    data-before="https://static.wixstatic.com/media/756761_c368d595300e4ed199f60f4d275e6237~mv2.jpg"
+                    data-after="https://static.wixstatic.com/media/756761_e3409940a9c44149820d3c61d4613c0e~mv2.png">
+
+                <div style="text-align:center; color:#a06a4a; font-size:16px; margin-top:5px;">
+                    Click to see our future. 💍✨
+                </div>
+            </div>
+        </div>
+
+        <!-- ปุ่ม 6 -->
+        <div class="accordion">จาก 2025 -> 2026 </div>
+        <div class="panel">
+            <p style="margin-top: 0px;">
+                เราเจอกันในปี 68 และกำลังก้าวข้ามไปใน 69 ด้วยกัน เราโตขึ้นอีกปีแล้วยะบี๋ ทั้งตัวเราเอง
+                และความสัมพันธ์ของเรา เค้าอยากให้เรายังเป็นแบบนี้ต่อๆไปไม่ว่าจะปีไหนๆ เป็นทั้งเด็กและผู้ใหญ่ไปด้วยกัน
+                ปีนี้ เรามีแพลนจะทำอะไรด้วยกันใหม่ๆ ที่มีทั้งเรื่องสนุก ทั้งเรื่องสำคัญ ทั้งเรื่องที่ทำเพื่ออนาคต คือมันดีมากนะเว้ย
+                ที่เราแบบว่า เช่น คุยกันว่าจะเปิดบัญชีด้วยกัน ลงทุนด้วยกัน มันคือสิ่งที่รู้สึกวางใจกัน
+                รู้สึกเข้าใกล้คำว่าอนาคตมากขึ้นไปเรื่อยๆ มันแบบมีความฝันร่วมกัน มองเห็นปลายทางด้วยกันอะ ขอให้ปี 69 มันดีขึ้นไปอีกนะที่รัก เค้ารักบี๋นะะะะ
+                จับมือกันไว้แบบนี้แหละ เค้าไม่ปล่อยเธอไปไหนหรอกคั้บ ไม่ให้ไป และก็จะไม่ไปไหนด้วยย ... 
+            </p>
+
+            <div class="single-img-box">
+                <img src="https://static.wixstatic.com/media/756761_b6a4495f4a8e4883b1f4d8ba197d4ca5~mv2.jpg">
+            </div>
+        </div>
+
     </div>
 
-  </div>
+    <script>
+        const btns = document.querySelectorAll(".accordion");
+        btns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const panel = btn.nextElementSibling;
+                panel.style.display = (panel.style.display === "block") ? "none" : "block";
+            });
+        });
 
-  <script>
-    const btns = document.querySelectorAll(".accordion");
-    btns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const panel = btn.nextElementSibling;
-        panel.style.display = (panel.style.display === "block") ? "none" : "block";
-      });
-    });
+        document.getElementById("toggleImg").addEventListener("click", (e) => {
+            const img = e.target;
+            const before = img.getAttribute("data-before");
+            const after = img.getAttribute("data-after");
 
-    document.getElementById("toggleImg").addEventListener("click", (e) => {
-      const img = e.target;
-      const before = img.getAttribute("data-before");
-      const after = img.getAttribute("data-after");
+            img.style.opacity = 0;
 
-      img.style.opacity = 0;
+            setTimeout(() => {
+                img.src = img.src.includes(before) ? after : before;
+                img.style.opacity = 1;
+            }, 1000);
+        });
 
-      setTimeout(() => {
-        img.src = img.src.includes(before) ? after : before;
-        img.style.opacity = 1;
-      }, 1000);
-    });
-
-  </script>
+    </script>
 
 
-  <script>
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerHTML = "💖";
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
 
-      heart.style.left = Math.random() * 100 + "vw";
+            heart.style.left = Math.random() * 100 + "vw";
 
-      const size = Math.random() * 15 + 10;
-      heart.style.fontSize = size + "px";
+            const size = Math.random() * 15 + 10;
+            heart.style.fontSize = size + "px";
 
-      heart.style.animationDuration = (Math.random() * 2 + 4) + "s";
+            heart.style.animationDuration = (Math.random() * 2 + 4) + "s";
 
-      document.body.appendChild(heart);
+            document.body.appendChild(heart);
 
-      setTimeout(() => {
-        heart.remove();
-      }, 7000);
-    }
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
 
-    setInterval(createHeart, 500);
-  </script>
+        setInterval(createHeart, 500);
+    </script>
 
 
-  <script>
-    document.addEventListener("click", () => {
-      const bgm = document.getElementById("bgm");
+    <script>
+        document.addEventListener("click", () => {
+            const bgm = document.getElementById("bgm");
 
-      bgm.addEventListener("loadedmetadata", () => {
-        bgm.currentTime = 80;
-        bgm.muted = false;
-        bgm.play();
-      }, { once: true });
+            bgm.addEventListener("loadedmetadata", () => {
+                bgm.currentTime = 80;
+                bgm.muted = false;
+                bgm.play();
+            }, { once: true });
 
-      bgm.load();
-    }, { once: true });
-  </script>
+            bgm.load();
+        }, { once: true });
+    </script>
 
-  <div id="sweetPopup" class="sweet-popup">
-    <div class="sweet-box">
-      คิดถึงเค้าอยู่ใช่มั้ยนะ<br>ถ้าคิดถึงก็เปิดอ่านบ่อยๆนะ 🤍
+    <div id="sweetPopup" class="sweet-popup">
+        <div class="sweet-box">
+            คิดถึงเค้าอยู่ใช่มั้ยนะ<br>ถ้าคิดถึงก็เปิดอ่านบ่อยๆนะ 🤍
+        </div>
     </div>
-  </div>
 
-  <style>
-    .sweet-popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(6px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      animation: popupFade 0.5s ease;
-    }
+    <style>
+        .sweet-popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: popupFade 0.5s ease;
+        }
 
-    .sweet-box {
-      background: #fffdf8;
-      padding: 28px 30px;
-      border-radius: 18px;
-      text-align: center;
-      font-size: 22px;
-      color: #a06a4a;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-      animation: popupPop 0.6s ease;
-    }
+        .sweet-box {
+            background: #fffdf8;
+            padding: 28px 30px;
+            border-radius: 18px;
+            text-align: center;
+            font-size: 22px;
+            color: #a06a4a;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            animation: popupPop 0.6s ease;
+        }
 
-    .sweet-close {
-      margin-top: 12px;
-      font-size: 14px;
-      color: #c0a28b;
-    }
+        .sweet-close {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #c0a28b;
+        }
 
-    @keyframes popupPop {
-      0% {
-        transform: scale(0.85);
-        opacity: 0;
-      }
+        @keyframes popupPop {
+            0% {
+                transform: scale(0.85);
+                opacity: 0;
+            }
 
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
 
-    @keyframes popupFade {
-      from {
-        opacity: 0;
-      }
+        @keyframes popupFade {
+            from {
+                opacity: 0;
+            }
 
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 
-  <script>
-    setTimeout(() => {
-      const popup = document.getElementById("sweetPopup");
-      popup.style.display = "flex";
-    }, 2500);
+    <script>
+        setTimeout(() => {
+            const popup = document.getElementById("sweetPopup");
+            popup.style.display = "flex";
+        }, 2500);
 
-    document.getElementById("sweetPopup").addEventListener("click", () => {
-      document.getElementById("sweetPopup").style.display = "none";
-    });
-  </script>
+        document.getElementById("sweetPopup").addEventListener("click", () => {
+            document.getElementById("sweetPopup").style.display = "none";
+        });
+    </script>
 
 
 
@@ -435,5 +456,3 @@
 </body>
 
 </html>
-
-

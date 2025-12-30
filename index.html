@@ -186,7 +186,7 @@
 <body>
 
     <audio id="bgm" loop muted>
-        <source src="fly-away.mp3" type="audio/mpeg">
+        <source src="potato.mp3" type="audio/mpeg">
     </audio>
 
     <div class="paper">
@@ -377,7 +377,7 @@
             const bgm = document.getElementById("bgm");
 
             bgm.addEventListener("loadedmetadata", () => {
-                bgm.currentTime = 40;
+                bgm.currentTime = 50;
                 bgm.muted = false;
                 bgm.play();
             }, { once: true });
@@ -489,3 +489,4 @@
 </body>
 
 </html>
+
